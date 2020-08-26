@@ -1,28 +1,56 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <words />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import words from './components/words.vue'
 
 export default {
-  name: 'App',
+  name      : 'app',
   components: {
-    HelloWorld
+    words
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Set your colors
+$primary:  #222222;
+$primary-invert: #ffcc00;
+$info: #014266;
+$info-invert: findColorInvert($info);
+$success: #3f653a;
+$success-invert: findColorInvert($success);
+$danger: #641717;
+$danger-invert: findColorInvert($danger);
+$warning: #cd5113;
+$warning-invert: findColorInvert($warning);
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: (
+    "white": ($white, $black),
+    "black": ($black, $white),
+    "light": ($light, $light-invert),
+    "dark": ($dark, $dark-invert),
+    "primary": ($primary, $primary-invert),
+    "info": ($info, $info-invert),
+    "success": ($success, $success-invert),
+    "warning": ($warning, $warning-invert),
+    "danger": ($danger, $danger-invert),
+    "primary-invert": ($primary-invert, $primary)
+);
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
 </style>
