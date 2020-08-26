@@ -33,7 +33,8 @@
             Next Word
           </button>
           <div class="card-content">
-            <span v-if="isColor && currentWord !== 'white'" :style="{color: currentWord}" style="font-size: 3em">{{ currentWord }}</span>
+            <span v-if="isColor && (currentWord !== 'white' && currentWord !== 'pink' && currentWord !== 'yellow')" :style="{color: currentWord}" style="font-size: 3em">{{ currentWord }}</span>
+            <span v-else-if="isColor && (currentWord === 'white' || currentWord === 'pink' || currentWord === 'yellow')" :style="{background: currentWord, color: 'black'}" style="font-size: 3em">{{ currentWord }}</span>
             <span v-else style="font-size: 3em">{{ currentWord }}</span>
             <p>&nbsp;</p>
           </div>
