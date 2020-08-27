@@ -33,10 +33,7 @@
             Next Word
           </button>
           <div class="card-content">
-            <span v-if="isColor && (currentWord !== 'white' && currentWord !== 'pink' && currentWord !== 'yellow')" :style="{color: currentWord}" style="font-size: 3em">{{ currentWord }}</span>
-            <span v-else-if="isColor && (currentWord === 'white' || currentWord === 'pink' || currentWord === 'yellow')" :style="{background: currentWord, color: 'black'}" style="font-size: 3em">{{ currentWord }}</span>
-            <span v-else style="font-size: 3em">{{ currentWord }}</span>
-            <p>&nbsp;</p>
+            <span style="font-size: 82px; font-family: 'Delius', cursive;">{{ currentWord }}</span>
           </div>
         </div>
       </b-modal>
@@ -97,8 +94,8 @@ export default {
       isStriped         : true,
       isNarrowed        : true,
       isPaginated       : true,
-      selectedPerPage   : 10,
-      perPage           : [5, 10, 15, 20],
+      selectedPerPage   : 25,
+      perPage           : [10, 25, 50, 100],
       isPaginationSimple: false,
       currentPage       : 1,
       isFullPage        : true,
